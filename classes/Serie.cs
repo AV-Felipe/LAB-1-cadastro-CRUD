@@ -1,4 +1,5 @@
 using LAB_1_cadastro_CRUD.enumeradores;
+using System;
 
 namespace LAB_1_cadastro_CRUD.classes
 {
@@ -26,11 +27,11 @@ namespace LAB_1_cadastro_CRUD.classes
         public Serie (int id, GeneroEnum genero, string titulo, string descricao, int ano, TipoItemEnum tipoItem)
         {
             this.Id = id; // neste statemente estamos definindo o valor da propriedade Id, herdada da classe abstrata, com o valor da variável id, que será passado na execução do método EditarSerie. a keyword "this" serve para desambiguar a expressão, ao marcar qual "Id" se refere a propriedade da instância da classe
+            this.TipoDeItem = tipoItem;
             this.Genero = genero;
             this.Titulo = titulo;
             this.Descricao = descricao;
             this.Ano = ano;
-            this.TipoDeItem = tipoItem;
             this.Ativo = true;
         }
 
@@ -62,6 +63,21 @@ namespace LAB_1_cadastro_CRUD.classes
         {
             return this.TipoDeItem;
         }
+
+        //por padrão, ao solicitarmos que um objeto seja impresso como paramêtro, por exemplo, do método writeLine, recebemos como retorno a qualificação do objeto ou, se for uma instância, o caminho do namespace até a classe de onde ele foi instanciado
+        //reescrevendo esse método podemos mudar o seu retorno para trazer, por exemplo, os dados da instância do objeto
+        public override string ToString()
+		{
+			// Environment.NewLine https://docs.microsoft.com/en-us/dotnet/api/system.environment.newline?view=netcore-3.1
+            string retorno = "";
+            retorno += "Tipo de item: " + this.TipoDeItem + Environment.NewLine;
+            retorno += "Gênero: " + this.Genero + Environment.NewLine;
+            retorno += "Título: " + this.Titulo + Environment.NewLine;
+            retorno += "Descrição: " + this.Descricao + Environment.NewLine;
+            retorno += "Ano de Início: " + this.Ano + Environment.NewLine;
+            retorno += "Situação: " + this.Ativo;
+			return retorno;
+		}
 
 
 
