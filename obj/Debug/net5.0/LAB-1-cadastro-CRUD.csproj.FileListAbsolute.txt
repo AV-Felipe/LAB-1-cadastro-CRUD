@@ -1,0 +1,16 @@
+C:\workspace\LAB-1-cadastro-CRUD\obj\Debug\net5.0\LAB-1-cadastro-CRUD.csprojAssemblyReference.cache
+C:\workspace\LAB-1-cadastro-CRUD\obj\Debug\net5.0\LAB-1-cadastro-CRUD.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\LAB-1-cadastro-CRUD\obj\Debug\net5.0\LAB-1-cadastro-CRUD.AssemblyInfoInputs.cache
+C:\workspace\LAB-1-cadastro-CRUD\obj\Debug\net5.0\LAB-1-cadastro-CRUD.AssemblyInfo.cs
+C:\workspace\LAB-1-cadastro-CRUD\obj\Debug\net5.0\LAB-1-cadastro-CRUD.csproj.CoreCompileInputs.cache
+C:\workspace\LAB-1-cadastro-CRUD\bin\Debug\net5.0\LAB-1-cadastro-CRUD.exe
+C:\workspace\LAB-1-cadastro-CRUD\bin\Debug\net5.0\LAB-1-cadastro-CRUD.deps.json
+C:\workspace\LAB-1-cadastro-CRUD\bin\Debug\net5.0\LAB-1-cadastro-CRUD.runtimeconfig.json
+C:\workspace\LAB-1-cadastro-CRUD\bin\Debug\net5.0\LAB-1-cadastro-CRUD.runtimeconfig.dev.json
+C:\workspace\LAB-1-cadastro-CRUD\bin\Debug\net5.0\LAB-1-cadastro-CRUD.dll
+C:\workspace\LAB-1-cadastro-CRUD\bin\Debug\net5.0\ref\LAB-1-cadastro-CRUD.dll
+C:\workspace\LAB-1-cadastro-CRUD\bin\Debug\net5.0\LAB-1-cadastro-CRUD.pdb
+C:\workspace\LAB-1-cadastro-CRUD\obj\Debug\net5.0\LAB-1-cadastro-CRUD.dll
+C:\workspace\LAB-1-cadastro-CRUD\obj\Debug\net5.0\ref\LAB-1-cadastro-CRUD.dll
+C:\workspace\LAB-1-cadastro-CRUD\obj\Debug\net5.0\LAB-1-cadastro-CRUD.pdb
+C:\workspace\LAB-1-cadastro-CRUD\obj\Debug\net5.0\LAB-1-cadastro-CRUD.genruntimeconfig.cache

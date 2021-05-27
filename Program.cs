@@ -6,10 +6,10 @@ namespace LAB_1_cadastro_CRUD
     {
         static void Main(string[] args)
         {
-            string opcaoUsuario = menuInicial();
-            while (opcaoUsuario.ToUpper() != "X")
+            string opcaoUsuario = menuInicial(); // para definir o valor da variável opcaoUsuario estamos evocando a classe estática menuInicial, a qual retorna um valor do tipo string
+            while (opcaoUsuario != "X")
             {
-              switch (switch_on)
+              switch (opcaoUsuario)
               {
                 case "1":
                     //ListarSeries();
@@ -58,7 +58,7 @@ namespace LAB_1_cadastro_CRUD
             Console.WriteLine("X- Sair");
             Console.WriteLine();
 
-            string opcaoUsuario = Console.ReadLine();
+            string opcaoUsuario = Console.ReadLine().ToUpper();
             Console.WriteLine();
             return opcaoUsuario;
         }
