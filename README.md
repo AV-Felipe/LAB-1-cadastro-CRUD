@@ -4,9 +4,9 @@
 
 ### Projeto Prático 1
 
-Aplictivo CRUD, em linha de comando, para o cadastro de séries (ou filmes, ou livros, etc.) em memória.
+Aplicativo CRUD, em linha de comando, para o cadastro de séries (ou filmes, ou livros, etc.) em memória.
 
-Por se tratar de um projeto pedagógico, fez-se uso abundante de comentários, evidenciano detalhes já explícitos no código.
+Por se tratar de um projeto pedagógico, fez-se uso abundante de comentários, evidenciando detalhes já explícitos no código.
 
 Utilizaremos uma classe abstrata, contendo as informações gerais dos itens que trataremos nos cadastros, a saber:
  - ID
