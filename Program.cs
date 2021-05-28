@@ -49,14 +49,14 @@ namespace LAB_1_cadastro_CRUD
         private static string menuInicial()
         {
             Console.WriteLine();
-            Console.WriteLine("Bem-vindo ao nosso pequeno acervo de séries e outras coisas supimpas!");
+            Console.WriteLine("Bem-vindo ao nosso pequeno acervo de filmes, séries e livros!");
             Console.WriteLine("Informe a opção desejada:");
             Console.WriteLine();
-            Console.WriteLine("1- Listar séries");
-            Console.WriteLine("2- Inserir nova série");
-            Console.WriteLine("3- Atualizar série");
-            Console.WriteLine("4- Excluir série");
-            Console.WriteLine("5- Visualizar série");
+            Console.WriteLine("1- Listar itens");
+            Console.WriteLine("2- Inserir novo item");
+            Console.WriteLine("3- Atualizar item");
+            Console.WriteLine("4- Excluir item");
+            Console.WriteLine("5- Visualizar um item");
             Console.WriteLine("C- Limpar Tela");
             Console.WriteLine("X- Sair");
             Console.WriteLine();
@@ -70,21 +70,21 @@ namespace LAB_1_cadastro_CRUD
 
         private static void ListarSeries()
         {
-            Console.WriteLine("Listagem das séries cadastradas:");
+            Console.WriteLine("Listagem dos itens cadastradas:");
             Console.WriteLine("");
 
             List<Serie> lista = repositorioSeries.Lista(); // chama o método Lista da instância do sérieRepositório e armazna o seu retorno na variável lista
 
             if (lista.Count == 0)
             {
-                Console.WriteLine("Nenhuma série cadastrada.");
+                Console.WriteLine("Nenhum item cadastrado.");
                 System.Threading.Thread.Sleep(2000); // interrompe a execução por 2 segundos
                 return;                
             }
 
             foreach (Serie serie in lista)
             {
-                Console.WriteLine("ID {0} : - {1} {2}", serie.retornaId(), serie.retornaTitulo(), (serie.retornaExcluido() ? "" : "*INDISPONÍVEL*"));
+                Console.WriteLine("ID {0} : - {1} {2} {3}", serie.retornaId(), serie.retornaTitulo(), serie.retornaTipoItem(),(serie.retornaExcluido() ? "" : "*INDISPONÍVEL*"));
                 
             }
             System.Threading.Thread.Sleep(2000);
@@ -92,7 +92,7 @@ namespace LAB_1_cadastro_CRUD
 
         private static void InserirSerie()
         {
-            Console.WriteLine("Inserir nova série:");
+            Console.WriteLine("Inserir novo item:");
             Console.WriteLine("");
             //usamos o foreach em conjunto com Enum.GetValues e Enum.GetName para gerar uma listagem em tela dos enumeradores de cada gênero
             foreach (int x in Enum.GetValues(typeof(enumeradores.TipoItemEnum)))
@@ -109,10 +109,10 @@ namespace LAB_1_cadastro_CRUD
             Console.Write("Digite o gênero entre as opções acima: ");
             int entradaGenero = int.Parse(Console.ReadLine()); //usa o método system.int.parse que tenta converter uma string em um integer
 
-            Console.Write("Digite o Título da Série: ");
+            Console.Write("Digite o Título: ");
 			string entradaTitulo = Console.ReadLine();
 
-            Console.Write("Digite o Ano de Início da Série: ");
+            Console.Write("Digite o Ano de lançamento: ");
 			//abaixo utilizamos o int.tryparse para lidar com casos em que o valor entrado não é um número
             int entradaAno=0;
             bool inteiro = false;
@@ -125,7 +125,7 @@ namespace LAB_1_cadastro_CRUD
                 }
             }
                         
-            Console.Write("Digite a Descrição da Série: ");
+            Console.Write("Digite a Descrição: ");
 			string entradaDescricao = Console.ReadLine();
 
             Serie novaSerie = new Serie(id: repositorioSeries.ProximoId(),
@@ -141,7 +141,7 @@ namespace LAB_1_cadastro_CRUD
 
         private static void AtualizarSerie()
         {
-            Console.WriteLine("Digite o ID da série que deseja atualizar:");
+            Console.WriteLine("Digite o ID do item que deseja atualizar:");
             int indiceSerie = int.Parse(Console.ReadLine());
             Console.WriteLine("");
             
@@ -159,10 +159,10 @@ namespace LAB_1_cadastro_CRUD
             Console.Write("Digite o gênero entre as opções acima: ");
             int entradaGenero = int.Parse(Console.ReadLine()); //usa o método system.int.parse que tenta converter uma string em um integer
 
-            Console.Write("Digite o Título da Série: ");
+            Console.Write("Digite o Título: ");
 			string entradaTitulo = Console.ReadLine();
 
-            Console.Write("Digite o Ano de Início da Série: ");
+            Console.Write("Digite o Ano de lançamento: ");
 			int entradaAno=0;
             bool inteiro = false;
             while(inteiro != true)
@@ -174,7 +174,7 @@ namespace LAB_1_cadastro_CRUD
                 }
             }
 
-            Console.Write("Digite a Descrição da Série: ");
+            Console.Write("Digite a Descrição: ");
 			string entradaDescricao = Console.ReadLine();
 
             Serie atualizaSerie = new Serie(id: indiceSerie,
@@ -190,7 +190,7 @@ namespace LAB_1_cadastro_CRUD
 
         private static void ExcluirSerie()
         {
-            Console.Write("Digite o id da série: ");
+            Console.Write("Digite o id do item: ");
 			int indiceSerie = int.Parse(Console.ReadLine());
 
             repositorioSeries.Exclui(indiceSerie);
@@ -198,7 +198,7 @@ namespace LAB_1_cadastro_CRUD
 
         private static void VisualizarSerie()
         {
-            Console.Write("Digite o id da série: ");
+            Console.Write("Digite o id do item: ");
 			int indiceSerie = int.Parse(Console.ReadLine());
 
             Serie serie = repositorioSeries.RetornaPorId(indiceSerie);

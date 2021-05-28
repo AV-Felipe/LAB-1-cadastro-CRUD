@@ -75,7 +75,7 @@ namespace LAB_1_cadastro_CRUD.classes
             retorno += "Título: " + this.Titulo + Environment.NewLine;
             retorno += "Descrição: " + this.Descricao + Environment.NewLine;
             retorno += "Ano de Início: " + this.Ano + Environment.NewLine;
-            retorno += "Situação: " + this.Ativo;
+            retorno += "Situação: " + (this.Ativo ? "Disponível" : "*INDISPONÍVEL*");
 			return retorno;
 		}
 
