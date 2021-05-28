@@ -113,8 +113,18 @@ namespace LAB_1_cadastro_CRUD
 			string entradaTitulo = Console.ReadLine();
 
             Console.Write("Digite o Ano de Início da Série: ");
-			int entradaAno = int.Parse(Console.ReadLine());
-
+			//abaixo utilizamos o int.tryparse para lidar com casos em que o valor entrado não é um número
+            int entradaAno=0;
+            bool inteiro = false;
+            while(inteiro != true)
+            {
+                inteiro = int.TryParse(Console.ReadLine(), out entradaAno);
+                if(inteiro != true)
+                {
+                    Console.WriteLine("Por favor digite um ano no formato AAAA (ex.:1999):");
+                }
+            }
+                        
             Console.Write("Digite a Descrição da Série: ");
 			string entradaDescricao = Console.ReadLine();
 
@@ -153,7 +163,16 @@ namespace LAB_1_cadastro_CRUD
 			string entradaTitulo = Console.ReadLine();
 
             Console.Write("Digite o Ano de Início da Série: ");
-			int entradaAno = int.Parse(Console.ReadLine());
+			int entradaAno=0;
+            bool inteiro = false;
+            while(inteiro != true)
+            {
+                inteiro = int.TryParse(Console.ReadLine(), out entradaAno);
+                if(inteiro != true)
+                {
+                    Console.WriteLine("Por favor digite um ano no formato AAAA (ex.:1999):");
+                }
+            }
 
             Console.Write("Digite a Descrição da Série: ");
 			string entradaDescricao = Console.ReadLine();
@@ -184,6 +203,7 @@ namespace LAB_1_cadastro_CRUD
 
             Serie serie = repositorioSeries.RetornaPorId(indiceSerie);
             Console.WriteLine(serie);
+            System.Threading.Thread.Sleep(2000);
         }
     }
 
